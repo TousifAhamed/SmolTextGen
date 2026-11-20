@@ -5,7 +5,7 @@ from transformers import AutoTokenizer
 import gradio as gr
 
 # Load half-precision state_dict
-checkpoint = torch.load("model_weights_fp16.pt", map_location="cpu")
+checkpoint = torch.load("model_weights_fp16.pt", map_location="cpu", weights_only=True)
 state_dict_fp16 = checkpoint["model_state_dict"]
 
 # Create model in FP16
